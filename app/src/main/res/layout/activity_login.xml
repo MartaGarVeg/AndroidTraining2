@@ -35,6 +35,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLength="10" />
+    <CheckBox
+        android:id="@+id/check_remember"
+        android:text="@string/label_remember_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
     <Button
         android:id="@+id/action_validate"
         android:layout_width="wrap_content"
