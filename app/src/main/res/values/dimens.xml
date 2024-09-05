@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Fonts size -->
+    <dimen name="size_big">28sp </dimen>
+    <dimen name="size_medium">20sp </dimen>
+    <dimen name="size_small">16sp </dimen>
+    <!-- Spaces (Múltiplos de 8) -->
+    <dimen name="small_spacing">8sp </dimen>
+    <dimen name="medium_spacing">16sp </dimen>
+</resources>
