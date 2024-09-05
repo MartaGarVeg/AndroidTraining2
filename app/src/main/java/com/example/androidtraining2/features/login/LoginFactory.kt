@@ -5,6 +5,7 @@ import com.example.androidtraining2.features.login.data.LoginDataRepository
 import com.example.androidtraining2.features.login.data.local.LoginXmlLocalDataSource
 import com.example.androidtraining2.features.login.data.remote.LoginMockRemoteDataSource
 import com.example.androidtraining2.features.login.domain.DeleteUsernameUseCase
+import com.example.androidtraining2.features.login.domain.GetUsernameUseCase
 import com.example.androidtraining2.features.login.domain.LoginRepository
 import com.example.androidtraining2.features.login.domain.SaveUsernameUseCase
 import com.example.androidtraining2.features.login.domain.SignInUseCase
@@ -18,9 +19,9 @@ class LoginFactory (private val context: Context){
     private val signInUseCase : SignInUseCase = provideSignInUseCase()
     private val saveUsernameUseCase: SaveUsernameUseCase = provideSaveUsernameUseCase()
     private val deleteUsernameUseCase: DeleteUsernameUseCase = provideDeleteUsernameUseCase()
-
+    private val getUsernameUseCase: GetUsernameUseCase = provideGetUsernameUseCase()
     fun provideLoginViewModel() : LoginViewModel{
-        return LoginViewModel(signInUseCase, saveUsernameUseCase, deleteUsernameUseCase)
+        return LoginViewModel(signInUseCase, saveUsernameUseCase, deleteUsernameUseCase, getUsernameUseCase)
     }
     private fun provideLoginRemoteDataSource(): LoginMockRemoteDataSource{
         return LoginMockRemoteDataSource()
@@ -44,5 +45,8 @@ class LoginFactory (private val context: Context){
 
     fun provideDeleteUsernameUseCase() : DeleteUsernameUseCase{
         return DeleteUsernameUseCase(loginRepository)
+    }
+    fun provideGetUsernameUseCase() : GetUsernameUseCase{
+        return GetUsernameUseCase(loginRepository)
     }
 }
